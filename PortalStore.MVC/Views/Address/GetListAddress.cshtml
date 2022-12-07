@@ -1,0 +1,47 @@
+﻿@model List<PortalStore.Entity.Concrete.DTOs.Address.AddressDetailDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetListAddress</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<h1>Adresler</h1>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Adres satırı</th>
+                <th>Ülke</th>
+                <th>Şehir</th>
+                <th>İlçe</th>
+                <th>Posta Kodu</th>
+                <th>Müşteri Ad Soyad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.AddressLine</td>
+                    <td>@item.Country</td>
+                    <td>@item.City</td>
+                    <td>@item.District</td>
+                    <td>@item.ZipCode</td>
+                    <td>@item.CustomerFullName</td>
+                    <td><a href="/Address/UpdateAddress/@item.Id" class="btn btn-primary">Güncelle</a></td>
+                    <td><a href="/Address/DeleteAddress/@item.Id" class="btn btn-danger">Sil</a></td>*
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Address/AddAddress" class="btn btn-info">Yeni Adres Ekle</a>
+    <a href="/Home/Index" class="btn btn-danger">Anasayfa</a>
+</body>
+</html>

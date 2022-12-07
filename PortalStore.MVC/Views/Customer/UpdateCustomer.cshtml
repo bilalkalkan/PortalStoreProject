@@ -1,0 +1,34 @@
+﻿
+@using Microsoft.CodeAnalysis.VisualBasic.Syntax
+@model PortalStore.Entity.Concrete.DTOs.Customer.CustomerDetailDto
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<br/>
+<h2>Müşteri Güncelleme Sayfası</h2>
+
+
+   <body>
+        <form class="form-control" method="post">
+            <div class="col-md-3">
+            <label>Adı</label>
+            <input type="text" name="FirstName" class="form-control" value="@Model.FirstName" />
+            <label>Soyadı</label>
+            <input type="text" name="LastName" value="@Model.LastName" class="form-control" />
+            <label>E-Posta</label>
+            <input type="text" name="Email" value="@Model.Email" class="form-control" />
+            <label>Tc No</label>
+            <input type="text" name="TCID" value="@Model.TCID" class="form-control" />
+            <label>Doğum Tarihi</label>
+            <input type="text" name="BirthDate" value="@Model.BirthDate" class="form-control" />
+             <label>Gsm</label>
+            <input type="text" name="GSM" value="@Model.GSM" class="form-control" />
+            </div>
+            <button class="btn btn-info">Kaydet</button>
+        </form>
+        
+       
+</body>

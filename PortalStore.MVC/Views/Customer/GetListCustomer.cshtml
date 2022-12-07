@@ -1,0 +1,54 @@
+﻿@using PortalStore.Entity
+@model List<PortalStore.Entity.Concrete.DTOs.Customer.CustomerDetailDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetListCustomer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<h1>Müşteriler</h1>
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>E-Posta</th>
+        <th>Tc No</th>
+        <th>Doğum Tarihi</th>
+        <th>Gsm</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.TCID</td>
+            <td>@item.BirthDate</td>
+            <td>@item.GSM</td>
+            <td><a href="/Customer/UpdateCustomer/@item.Id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Customer/DeleteCustomer/@item.Id" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+    </tbody>
+    
+</table>
+<br/>
+    <a href="/Customer/AddCustomer" class="btn btn-info">Yeni Müşteri</a>
+    <a href="/Home/Index" class="btn btn-danger">Anasayfa</a>
+</body>
+</html>

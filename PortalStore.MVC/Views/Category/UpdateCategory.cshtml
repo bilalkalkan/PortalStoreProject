@@ -1,0 +1,24 @@
+﻿@model PortalStore.Entity.Concrete.DTOs.Category.CategoryDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateCategory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <form class="form-control" method="post">
+        <div class="col-md-3">
+            <label>Kategori Adı</label>
+            <input type="text" name="Name" class="form-control" value="@Model.Name" />
+        </div>
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</body>
+</html>

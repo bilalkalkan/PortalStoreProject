@@ -1,0 +1,43 @@
+﻿@model List<PortalStore.Entity.Concrete.DTOs.OrderItem.OrderItemDetailDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetListOrderItems</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Birim Fiyatı</th>
+                <th>Adet</th>
+                <th>Toplam Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SkuName</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.TotalPrice</td>
+                    <td><a href="/Address/UpdateAddress/@item.Id" class="btn btn-primary">Güncelle</a></td>
+                    <td><a href="/Address/DeleteAddress/@item.Id" class="btn btn-danger">Sil</a></td>*
+                </tr>
+            }
+            </tbody>
+    </table>
+    <a href="/Order/AddOrder" class="btn btn-info">Yeni Sipariş</a>
+    <a href="/Home/Index" class="btn btn-danger">Anasayfa</a>
+
+</body>
+</html>
